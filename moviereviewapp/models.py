@@ -40,4 +40,6 @@ class Review(models. Model):
 
 
     def __str__(self):
-        return self.full_name
+        return self.movie.movie_title
+
+
