@@ -8,10 +8,26 @@ def index_view(request):
 
 def movie_list(request):
 
-    context ={
-       "Movies": Movie.objects.all()
+    context = {
+       "movies": Movie.objects.all()
     }
     return render(request, "movie.html", context)
+
+def movie_view(request):
+
+    context = {
+        "rated": Review.objects.exclude(rater__review__rating__lt=4)
+    }
+    return render(request, "movie_rating.html", context)
+
+def single_view(request,id):
+
+    context = {
+        #"movie_id": single_view(),
+        "single": Movie.objects.get(id=id)
+    }
+    return render(request, "single_movie.html", context)
+
 
 
 

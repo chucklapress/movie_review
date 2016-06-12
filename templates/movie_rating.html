@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top twenty movies reviewed</title>
+</head>
+<body>
+        <h2>A listing of the top twenty movies reviewed</h2>
+            {% for item in rated %}
+            <h3>{{ item.rating }}</h3>
+                {% endfor %}
+
+</body>
+</html>
