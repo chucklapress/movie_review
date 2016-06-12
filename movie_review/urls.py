@@ -22,7 +22,8 @@ urlpatterns = [
     url(r'^$', views.index_view),
     url(r'^movie$', views.movie_list),
     url(r'^moviereview$', views.movie_view),
-    url(r'^single/(?P<id>\w+)/$', views.single_view)
+    url(r'^single/(?P<id>\w+)/$', views.single_view),
+    url(r'^raterinfo/(?P<id>\w+)/$', views.rater_info)
 
     #url(r'^single$', views.single_view)
 

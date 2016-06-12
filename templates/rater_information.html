@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie rater information</title>
+</head>
+<body>
+        <h2>A page contain reviews and geographic information</h2>
+            <p>Please enter a rater id number{{ id }}</p>
+
+            {% for local in location %}
+                {{ location.zipcode }}
+                {% endfor %}
+
+                {{ location.zipcode }}
+
+
+
+
+            {% for item in reviewed %}
+            <h3>{{ reviewed.rating }}</h3>
+                {% endfor %}
+
+                {{ reviewed.rater_id }}
+
+
+
+
+</body>
+</html>

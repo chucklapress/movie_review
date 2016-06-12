@@ -28,6 +28,16 @@ def single_view(request,id):
     }
     return render(request, "single_movie.html", context)
 
+def rater_info(request,id):
+    context = {
+        "rater": Rater.objects.get(id=id)
+        "location": Rater.objects.get(zipcode=str),
+        "reviewed": Review.objects.get(rater__review=all)
+    }
+    return render(request, "rater_information.html",context)
+
+
+
 
 
 
