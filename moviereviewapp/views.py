@@ -31,7 +31,7 @@ def single_view(request,id):
 def rater_info(request,id):
     context = {
         "rater": Rater.objects.get(id=id),
-        "location": Rater.objects.get(zipcode=all),
+        "location": Rater.objects.get(zipcode=all()),
         "reviewed": Review.objects.get(rater__review=all)
     }
     return render(request, "rater_information.html",context)
