@@ -6,10 +6,12 @@
 </head>
 <body>
     <h2>Listing of the movies reviewed on our site</h2>
-        {% for movie in Movies %}
+        {% for movie in movies %}
         <h3>{{ movie.movie_title }}</h3>
+        <h3>{{ movie.release_date }}</h3>
+        <h3>{{ movie.video_release_date }}</h3>
+        <h3>{{ movie.IMBd_URL}}</h3>
             {% endfor %}
-
 
 
 </body>
