@@ -6,22 +6,21 @@
 </head>
 <body>
         <h2>A page contain reviews </h2>
-            <p>Please enter a rater id number{{ id }}</p>
+            <p>Please enter a rater id number</p>
 
-            {% for local in location %}
-                {{ local.zipcode }}
+            {% for rater in rater  %}
+                {{ rater.id }}
+                {{rater.age}}
+                {{rater.occupation}}
+                {{ rater.gender }}
                 {% endfor %}
 
-                {{ location.zipcode }}
+                {{ rater.id }}
 
 
 
 
-            {% for item in reviewed %}
-            <h3>{{ reviewed.rating }}</h3>
-                {% endfor %}
 
-                {{ reviewed.rater_id }}
 
 
 

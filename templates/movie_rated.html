@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movie rated</title>
+  </head>
+  <body>
+    {% for movie in rated  %}
+        {{ movie.rating }}
+        {{movie.movie.movie_title}}
+
+
+        {% endfor %}
+
+  </body>
+</html>

@@ -16,9 +16,10 @@ def movie_list(request):
 def movie_view(request):
 
     context = {
-        "rated": Review.objects.exclude(rater__review__rating__lt=4)
+        "rated": Review.objects.all()
     }
     return render(request, "movie_rating.html", context)
+
 
 def single_view(request,id):
 
@@ -28,10 +29,15 @@ def single_view(request,id):
     }
     return render(request, "single_movie.html", context)
 
-def rater_info(request,id):
+def rater_info(request):
     context = {
-        "rater": Review.objects.get(id=id),
-        "movie": Review.objects.get(id=id),
-        "rating": Review.objects.get(rating=rating)
+        "rater": Rater.objects.all(),
+
     }
     return render(request, "rater_information.html",context)
+
+def movie_rating_view(request):
+    context = {
+        "rated": Review.objects.filter(rating=1)
+    }
+    return render(request, "movie_rated.html", context)

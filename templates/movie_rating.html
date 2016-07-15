@@ -7,7 +7,9 @@
 <body>
         <h2>A listing of the top twenty movies reviewed</h2>
             {% for item in rated %}
-            <h3>{{ item.rating }}</h3>
+            <h3>{{ rated.movie }}</h3>
+            <h3>{{ rated.rater }}</h3>
+            <h3>{{ rated.rating }}</h3>
                 {% endfor %}
 
 </body>
