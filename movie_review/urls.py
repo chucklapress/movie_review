@@ -21,10 +21,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index_view),
     url(r'^movie/$', views.movie_list),
-    url(r'^movie_review/$', views.movie_view),
+    url(r'^rated/$', views.movie_rating_view),
     url(r'^single/(?P<id>\w+)/$', views.single_view),
     url(r'^raters/$', views.rater_info),
-    url(r'^rated/$', views.movie_rating_view)
+
 
     #url(r'^single$', views.single_view)
 
