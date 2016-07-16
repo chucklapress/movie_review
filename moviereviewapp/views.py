@@ -31,11 +31,9 @@ def rater_info(request):
     return render(request, "rater_information.html",context)
 
 
-
-
-
 def movie_rating_view(request):
     context = {
-        "rated": Review.objects.filter(rating=3)
+        "rated": Review.objects.filter(rating=1)
+
     }
     return render(request, "movie_rated.html", context)

@@ -7,10 +7,11 @@
 <body>
     <h2>Listing of the movies reviewed on our site</h2>
         {% for movie in movies %}
-        <h3>{{ movie.movie_title }}</h3>
-        <h3>{{ movie.release_date }}</h3>
-        <h3>{{ movie.video_release_date }}</h3>
-        <h3>{{ movie.IMBd_URL}}</h3>
+        <h5>{{movie.id}}</h5>
+        <h2>{{ movie.movie_title }}</h2>
+        <h4>{{ movie.release_date }}</h4>
+        <h5>{{ movie.video_release_date }}</h5>
+        <h5>{{ movie.IMBd_URL}}</h5>
             {% endfor %}
 
 
