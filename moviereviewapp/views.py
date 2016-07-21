@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db.models import Count, Avg
 from moviereviewapp.models import Rater, Movie, Review
 
 
@@ -30,10 +31,14 @@ def rater_info(request):
     }
     return render(request, "rater_information.html",context)
 
-
 def movie_rating_view(request):
+
     context = {
         "rated": Review.objects.filter(rating=1)
 
     }
     return render(request, "movie_rated.html", context)
+
+def rated_rating(request):
+     
+    pass

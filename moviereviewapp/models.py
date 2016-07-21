@@ -32,12 +32,22 @@ class Movie(models.Model):
     war = models.IntegerField()
     western = models.IntegerField()
 
-class Review(models. Model):
+class Review(models.Model):
     rater = models.ForeignKey(Rater)
     movie = models.ForeignKey(Movie)
     rating = models.IntegerField()
     timestamp = models.IntegerField()
 
+    def __str__(self):
+        return self.movie.movie_title
+
+
+
+
+class Rating(models.Model):
+    movie_title = models.ForeignKey(Movie)
+    number_ratings = models.IntegerField()
+    average = models.FloatField()
 
     def __str__(self):
         return self.movie.movie_title
