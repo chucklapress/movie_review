@@ -46,7 +46,7 @@ class Review(models.Model):
 
 class Rating(models.Model):
     movie_title = models.ForeignKey(Movie)
-    number_ratings = models.IntegerField()
+    number_ratings = models.IntegerField(null=True)
     average = models.FloatField()
 
     def __str__(self):
