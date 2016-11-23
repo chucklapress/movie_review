@@ -40,5 +40,5 @@ def movie_rating_view(request):
     return render(request, "movie_rated.html", context)
 
 def rated_rating(request):
-     
+
     pass

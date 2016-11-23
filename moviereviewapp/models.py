@@ -1,11 +1,14 @@
 from django.db import models
 
-# Create your models here.
+
+    # Create your models here.
 class Rater(models.Model):
     age = models.IntegerField()
     gender = models.CharField(max_length=10)
     occupation = models.CharField(max_length=50)
     zipcode = models.CharField(max_length=10)
+    def __str__(self):
+        return self.occupation
 
 class Movie(models.Model):
     movie_title = models.CharField(max_length=30)
@@ -32,6 +35,9 @@ class Movie(models.Model):
     war = models.IntegerField()
     western = models.IntegerField()
 
+    def __str__(self):
+        return self.movie_title
+
 class Review(models.Model):
     rater = models.ForeignKey(Rater)
     movie = models.ForeignKey(Movie)
@@ -41,13 +47,10 @@ class Review(models.Model):
     def __str__(self):
         return self.movie.movie_title
 
+class Average(models.Model):
+        movie = models.ForeignKey(Movie)
+        number_ratings = models.IntegerField()
+        average = models.FloatField()
 
-
-
-class Rating(models.Model):
-    movie_title = models.ForeignKey(Movie)
-    number_ratings = models.IntegerField(null=True)
-    average = models.FloatField()
-
-    def __str__(self):
-        return self.movie.movie_title
+        def __str__(self):
+            return self.movie.movie_title
