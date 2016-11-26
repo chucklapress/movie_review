@@ -4,3 +4,7 @@ __pycache__
 .pyc
 .envrc
 .direnv
+u.user
+u.data
+u.item
+db.sqlite3
