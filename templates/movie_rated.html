@@ -1,16 +1,20 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Movie rated</title>
-  </head>
-  <body>
-    {% for movie in rated  %}
-        {{ movie.ratin }}
-        {{movie.movie.movie_title}}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 20 movies reviewed</title>
+</head>
 
 
-        {% endfor %}
-
-  </body>
+<h3>Five star rated movies</h3>
+  {% for movie in rated  %}
+    <ol>
+      <h5>Movie ID#:{{ movie.pk }}</h5>
+      <h4>Movie Title:{{movie.movie.movie_title}}</h4>
+      <a href="/single/{{movie.pk}}">Movie Details</a>
+    </ol>
+    {% endfor %}
+</div>
+</body>
 </html>

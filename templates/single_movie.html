@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Single view</title>
 </head>
-<body>
-<h3>A full view of one movie in the data base</h3>
+<body
+
 <p> movie id number: {{single.id}}</p>
 <h3>{{ single.movie_title}}</h3>
 <h5>{{single.release_date}}</h5>
@@ -13,6 +13,12 @@
 <h5>{{single.IMBd_URL}}</h5>
 <h5>{{single.average}}</h5>
 
-
+{% for reviewer in single.review_set.all %}
+  <div class="">
+    <br>
+    {{ reviewer.rater }} | {{ reviewer.rating }}
+    <a href="/singlerate/{{reviewer.rater.id}}">Rater Details</a>
+  </div>
+{% endfor %}
 </body>
 </html>
